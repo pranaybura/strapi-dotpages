@@ -8,9 +8,7 @@
           database: env('DATABASE_NAME'),
           user: env('DATABASE_USERNAME'),
           password: env('DATABASE_PASSWORD'),
-          ssl: {
-            rejectUnauthorized:env.bool('DATABASE_SSL_SELF', false),
-          },
+          ssl: env.bool('DATABASE_SSL', false) ? { rejectUnauthorized: false } : false,
         },
         debug: false,
       },
