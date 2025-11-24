@@ -4,7 +4,7 @@ const { host, port, database, user, password } = parse(
   process.env.DATABASE_URL
 );
 
-module.exports = ({ env }) => ({
+export default ({ env }) => ({
   connection: {  
     client: 'postgres',
     connection: {
@@ -14,7 +14,7 @@ module.exports = ({ env }) => ({
       user,
       password,
       ssl: {
-        rejectUnauthorized: false,
+        ca: env('DATABASE_CA'),
       },
     },
       debug: false,
