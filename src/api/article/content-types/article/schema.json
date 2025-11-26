@@ -20,6 +20,13 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "visible": {
+      "type": "enumeration",
+      "enum": [
+        "Enable",
+        "Disable"
+      ]
     }
   }
 }
